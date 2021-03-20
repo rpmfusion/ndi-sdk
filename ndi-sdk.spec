@@ -61,7 +61,7 @@ mv 'NDI SDK for Linux'/* .
 _arch=$(uname -m)
 
 case ${_arch} in
-  armv7hl)
+  armv7l)
     _ndi_arch="arm-rpi3-linux-gnueabihf"
     ;;
   i386)
