@@ -3,7 +3,7 @@
 
 Name:           ndi-sdk
 Version:        4.6.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        NewTek NDI SDK
 
 License:        Proprietary
@@ -115,5 +115,8 @@ sed -i -e 's|@LIBDIR@|%{_libdir}|' \
 
 
 %changelog
+* Wed Aug 04 2021 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 4.6.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Wed Feb 24 2021 Nicolas Chauvet <kwizart@gmail.com> - 4.6.1-1
 - Initial spec file
