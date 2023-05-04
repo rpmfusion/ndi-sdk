@@ -2,13 +2,13 @@
 %global __strip /bin/true
 
 Name:           ndi-sdk
-Version:        4.6.1
-Release:        4%{?dist}
+Version:        5.5.4
+Release:        1%{?dist}
 Summary:        NewTek NDI SDK
 
 License:        Proprietary
 URL:            https://ndi.tv/sdk
-Source0:        https://downloads.ndi.tv/SDK/NDI_SDK_Linux/InstallNDISDK_v4_Linux.tar.gz
+Source0:        https://downloads.ndi.tv/SDK/NDI_SDK_Linux/Install_NDI_SDK_v5_Linux.tar.gz
 Source1:        ndi.pc.in
 
 ExclusiveArch: i686 x86_64 armv7hl
@@ -48,8 +48,8 @@ The %{name}-documentation documentations for %{name}.
 %autosetup -c
 
 # Uncompress installer
-ARCHIVE=$(awk '/^__NDI_ARCHIVE_BEGIN__/ { print NR+1; exit 0; }' InstallNDISDK_v4_Linux.sh)
-tail -n+$ARCHIVE InstallNDISDK_v4_Linux.sh | tar -xz
+ARCHIVE=$(awk '/^__NDI_ARCHIVE_BEGIN__/ { print NR+1; exit 0; }' Install_NDI_SDK_v5_Linux.sh)
+tail -n+$ARCHIVE Install_NDI_SDK_v5_Linux.sh | tar -xz
 mv 'NDI SDK for Linux'/* .
 
 
@@ -102,7 +102,7 @@ sed -i -e 's|@LIBDIR@|%{_libdir}|' \
 
 %files -n libndi-sdk
 %license "NDI SDK License Agreement.pdf"  "NDI SDK License Agreement.txt" Version.txt licenses/libndi_licenses.txt
-%{_libdir}/libndi.so.4*
+%{_libdir}/libndi.so.5*
 
 %files devel
 %doc examples
@@ -115,6 +115,9 @@ sed -i -e 's|@LIBDIR@|%{_libdir}|' \
 
 
 %changelog
+* Thu May 04 2023 Nicolas Chauvet <kwizart@gmail.com> - 5.5.4-1
+- Update to 5.5.4
+
 * Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 4.6.1-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
