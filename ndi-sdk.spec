@@ -13,7 +13,7 @@ Source1:        ndi.pc.in
 
 ExclusiveArch: i686 x86_64 armv7hl aarch64
 
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       libndi-sdk%{?_isa} = %{version}-%{release}
 
 
 %description
