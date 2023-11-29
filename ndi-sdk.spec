@@ -2,8 +2,8 @@
 %global __strip /bin/true
 
 Name:           ndi-sdk
-Version:        5.5.4
-Release:        2%{?dist}
+Version:        5.6.0
+Release:        1%{?dist}
 Summary:        NewTek NDI SDK
 
 License:        Proprietary
@@ -11,7 +11,7 @@ URL:            https://ndi.tv/sdk
 Source0:        https://downloads.ndi.tv/SDK/NDI_SDK_Linux/Install_NDI_SDK_v5_Linux.tar.gz
 Source1:        ndi.pc.in
 
-ExclusiveArch: i686 x86_64 armv7hl
+ExclusiveArch: i686 x86_64 armv7hl aarch64
 
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 
@@ -61,6 +61,9 @@ mv 'NDI SDK for Linux'/* .
 _arch=$(uname -m)
 
 case ${_arch} in
+  aarch64)
+    _ndi_arch="aarch64-rpi4-linux-gnueabi"
+    ;;
   armv7l)
     _ndi_arch="arm-rpi3-linux-gnueabihf"
     ;;
@@ -115,6 +118,10 @@ sed -i -e 's|@LIBDIR@|%{_libdir}|' \
 
 
 %changelog
+* Wed Nov 29 2023 Nicolas Chauvet <kwizart@gmail.com> - 5.6.0-1
+- Update to 5.6.0
+- Add aarch64 support
+
 * Thu Aug 03 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 5.5.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
 
