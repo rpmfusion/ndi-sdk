@@ -3,7 +3,7 @@
 
 Name:           ndi-sdk
 Version:        5.6.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        NewTek NDI SDK
 
 License:        Proprietary
@@ -118,6 +118,9 @@ sed -i -e 's|@LIBDIR@|%{_libdir}|' \
 
 
 %changelog
+* Sun Feb 04 2024 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 5.6.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
+
 * Wed Nov 29 2023 Nicolas Chauvet <kwizart@gmail.com> - 5.6.0-1
 - Update to 5.6.0
 - Add aarch64 support
