@@ -2,7 +2,7 @@
 %global __strip /bin/true
 
 Name:           ndi-sdk
-Version:        6.1.1
+Version:        6.2.0
 Release:        1%{?dist}
 Summary:        NewTek NDI SDK
 
@@ -52,6 +52,8 @@ ARCHIVE=$(awk '/^__NDI_ARCHIVE_BEGIN__/ { print NR+1; exit 0; }' Install_NDI_SDK
 tail -n+$ARCHIVE Install_NDI_SDK_v6_Linux.sh | tar -xz
 mv 'NDI SDK for Linux'/* .
 
+echo "Version: "
+cat Version.txt
 
 %build
 # Nothing to build
@@ -118,6 +120,9 @@ sed -i -e 's|@LIBDIR@|%{_libdir}|' \
 
 
 %changelog
+* Mon Jun 23 2025 Nicolas Chauvet <kwizart@gmail.com> - 6.2.0-1
+- Update to 6.2.0
+
 * Tue May 13 2025 Nicolas Chauvet <kwizart@gmail.com> - 6.1.1-1
 - Update to 6.1.1
 
