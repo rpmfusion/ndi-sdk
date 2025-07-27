@@ -3,7 +3,7 @@
 
 Name:           ndi-sdk
 Version:        6.2.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        NewTek NDI SDK
 
 License:        Proprietary
@@ -120,6 +120,9 @@ sed -i -e 's|@LIBDIR@|%{_libdir}|' \
 
 
 %changelog
+* Sun Jul 27 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 6.2.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
+
 * Mon Jun 23 2025 Nicolas Chauvet <kwizart@gmail.com> - 6.2.0-1
 - Update to 6.2.0
 
